@@ -69,15 +69,17 @@
       <h2>Latest Posts</h2>
       <hr />
 
-      {% for blog in blogs.all %}
-        <a href="{% url 'detail' blog.id %}"><h3>{{ blog.title }}</h3></a>
-        {{ blog.pub_date_short }}
-        <br />
-        <img class="img-fluid pt-2 pb-2" src="{{ blog.image.url }}" height=200 width=200/>
-        <br />
-        <p class="pt-1">{{ blog.body_summary }} - <a href="{% url 'detail' blog.id %}">[Full Post]</a></p>
-        <hr />
-      {% endfor %}
+      <div class="container ml-3">
+        {% for blog in blogs.all %}
+          <a href="{% url 'detail' blog.id %}"><h3>{{ blog.title }}</h3></a>
+          {{ blog.pub_date_short }}
+          <br />
+          <img class="img-fluid pt-2 pb-2" src="{{ blog.image.url }}" height=200 width=200/>
+          <br />
+          <p class="pt-1">{{ blog.body_summary }} - <a href="{% url 'detail' blog.id %}">[Full Post]</a></p>
+          <hr />
+        {% endfor %}
+    </div>
       <footer class="text-muted mt-5">
         <div class="container text-center">
           <p>
