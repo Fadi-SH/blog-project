@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Jekyll v3.8.5">
-  <title>Fadi SH · Web Developer</title>
+  <title>{{ blog.title }}</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
@@ -49,10 +49,10 @@
         <div class="nav flex-sm-column ml-3">
           <h3>Fadi Hammad</h3>
           <div class="dropdown-divider"></div>
-          <h5><a class="nav-item nav-link active" href="{% url 'home' %}">Home</a></h5>
+          <h5><a class="nav-item nav-link" href="{% url 'home' %}">Home</a></h5>
           <h5><a class="nav-item nav-link" href="https://github.com/Fadi-SH">GitHub</a></h5>
           <h5><a class="nav-item nav-link" href="{% static 'FadiHammadResume.pdf' %}">Resume</a></h5>
-          <h5><a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a></h5>
+          <h5><a class="nav-item nav-link active" href="{% url 'allblogs' %}">Blog</a></h5>
           <div class="dropdown-divider"></div>
           <p>
             Feel free to check out my blog!
@@ -63,47 +63,25 @@
       </div>
     </div>
     <div class="col" id="main">
-      <section class="text-center">
-        <div class="container">
-          <img src="{% static 'FadiLogo.png' %}" />
-          <h2>Welcome to my little corner of the web!</h2>
-          <p>
-            Sample text here yall
-          </p>
 
-          <p>
-            <a href="mailto:fadihammad914@gmail.com" class="btn btn-info my-2">Email Me</a>
-          </p>
+      <div class="text-center">
 
-        </div>
-      </section>
-      <div class="album py-5 bg-light">
-        <div class="container">
-
-          <div class="row">
-
-            {% for work in works.all  %}
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <img class="card-img-top" src="{{ work.image.url }}" style="height:220px" />
-                <div class="card-body">
-                  <p class="card-text">{{ work.summary }}</p>
-                </div>
-              </div>
-            </div>
-            {% endfor %}
-          </div>
-
-        </div>
+        <h1 class="pt-3">{{ blog.title }}</h1>
+        <i> {{ blog.pub_date }} </i>
+        <br />
+        <img class="pt-4 img-fluid" src="{{ blog.image.url }}" />
+        <br  />
       </div>
+
+      <p class="pt-5">{{ blog.body }}</p>
+
       <footer class="text-muted mt-5">
         <div class="container text-center">
           <p>
-            &copy; Fadi Hammad {% now "Y" %} -- Powered by Django 🐍</p>
+            &copy; Fadi Hammad {% now "Y" %} -- Powered by Django 🐍
           </p>
         </div>
       </footer>
-    </div>
   </div>
 </div>
 
