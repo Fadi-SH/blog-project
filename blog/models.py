@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Blog(models.Model):
+class Post(models.Model):
     title = models.CharField(max_length=255)
     pub_date = models.DateTimeField()
     body = models.TextField()
@@ -16,4 +16,4 @@ class Blog(models.Model):
         return self.body[:110]
 
     def pub_date_short(self):
-        return self.pub_date.strftime('%b %e, %Y')
+        return self.pub_date.strftime('%B %e, %Y')

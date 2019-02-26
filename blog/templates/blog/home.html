@@ -1,0 +1,43 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+
+<section class="intro-bio">
+
+  <p>
+    My name is <strong>Fadi Hammad</strong>. I'm a <strong>software
+      developer</strong> living in <strong>New York</strong> who is
+      passionate about AI, <strong>intelligent</strong> systems,
+      and bleeding edge <strong>web</strong> technologies.
+    </p>
+
+    <p>
+      I also enjoy <strong>baked goods</strong>, tinkering with
+      solar-powered <strong>robots</strong>, and gaming when there's
+      time.
+    </p>
+
+  </section>
+
+  <hr>
+  <br>
+
+  <h2>Latest Posts</h2>
+  <br>
+  <div class="container">
+    <div class="row">
+      {% for post in posts.all %}
+      <div class="col-6">
+        <article>
+          <div>
+            <h3><a class="article-title" href="{% url 'detail' post.id %}">{{ post.title }}</a></h3>
+            <p class="article-content"><em>{{ post.body_summary }}</em> - <a href="{% url 'detail' post.id %}"><b class="full-post">[Full Post]</b></a></p>
+          </div>
+        </article>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="more clear">» <a href="#">See more posts</a></p>
+  </div>
+
+  {% endblock content %}

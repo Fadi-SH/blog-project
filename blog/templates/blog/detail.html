@@ -1,91 +1,14 @@
-<!doctype html>
-<html lang="en">
-<head>
-  {% load staticfiles %}
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-  <meta name="generator" content="Jekyll v3.8.5">
-  <title>{{ blog.title }}</title>
+{% extends "blog/base.html" %}
 
-  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
-
-  <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-  <!-- Custom CSS -->
+{% block content %}
 
 
-  <style>
-  .bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
+<h1 class="article-title">{{ post.title }}</h1>
+<i> {{ post.pub_date_short }} </i>
+<br />
+<img class="pt-4 img-fluid" src="{{ post.image.url }}" />
+<br  />
 
-  body { background: #f4e4c7 !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+<p class="pt-5">{{ post.body }}</p>
 
-  @media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-      font-size: 3.5rem;
-    }
-  }
-
-  .active {color: orange !important;}
-
-  </style>
-  <!-- Custom styles for this template -->
-  <link href="album.css" rel="stylesheet">
-</head>
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-2 px-2 bg-light">
-      <div class="py-2 sticky-top flex-grow-1">
-        <div class="nav flex-sm-column ml-3">
-          <h3>Fadi Hammad</h3>
-          <div class="dropdown-divider"></div>
-          <h5><a class="nav-item nav-link" href="{% url 'home' %}">Home</a></h5>
-          <h5><a class="nav-item nav-link" href="https://github.com/Fadi-SH">GitHub</a></h5>
-          <h5><a class="nav-item nav-link" href="{% static 'FadiHammadResume.pdf' %}">Resume</a></h5>
-          <h5><a class="nav-item nav-link active" href="{% url 'allblogs' %}">Blog</a></h5>
-          <div class="dropdown-divider"></div>
-          <p>
-            Feel free to check out my blog!
-            I write on a variety of technology trends.
-          </p>
-          <div class="dropdown-divider"></div>
-        </div>
-      </div>
-    </div>
-    <div class="col" id="main">
-
-      <div class="text-center">
-
-        <h1 class="pt-3">{{ blog.title }}</h1>
-        <i> {{ blog.pub_date }} </i>
-        <br />
-        <img class="pt-4 img-fluid" src="{{ blog.image.url }}" />
-        <br  />
-      </div>
-
-      <p class="pt-5">{{ blog.body }}</p>
-
-      <footer class="text-muted mt-5">
-        <div class="container text-center">
-          <p>
-            &copy; Fadi Hammad {% now "Y" %} -- Powered by Django 🐍
-          </p>
-        </div>
-      </footer>
-  </div>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</html>
+{% endblock content %}
