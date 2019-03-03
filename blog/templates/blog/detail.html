@@ -9,6 +9,6 @@
 <img class="pt-4 img-fluid" src="{{ post.image.url }}" />
 <br  />
 
-<p class="pt-5">{{ post.body }}</p>
+<p class="pt-5">{{ post.body|safe }}</p>
 
 {% endblock content %}

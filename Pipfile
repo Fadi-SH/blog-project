@@ -10,6 +10,8 @@ django = "*"
 pillow = "*"
 psycopg2 = "*"
 psycopg2-binary = "*"
+django-tinymce = "*"
+django-ckeditor = "*"
 
 [requires]
 python_version = "3.7"

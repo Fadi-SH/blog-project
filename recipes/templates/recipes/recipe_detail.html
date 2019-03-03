@@ -1,0 +1,13 @@
+{% extends "recipes/base.html" %}
+
+{% block content %}
+
+<h1 class="article-title">{{ recipe.title }}</h1>
+<i> {{ recipe.pub_date_short }} </i>
+<br />
+<img class="pt-4 img-fluid" src="{{ recipe.image.url }}" />
+<br  />
+
+<p class="pt-5">{{ recipe.instructions|safe }}</p>
+
+{% endblock content %}

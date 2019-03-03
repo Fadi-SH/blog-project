@@ -35,9 +35,9 @@
         <nav class="sidebar">
           {% with request.resolver_match.url_name as url_name %}
           <ul id="menu">
-            <li class="{% if url_name == '/' %}active{% endif %}">Home</li>
+            <li class="home"><a href="{% url 'blog-home' %}">Home</a></li>
             <li class="weblog"><a href="#">Blog</a></li>
-            <li class="recipes"><a href="{% url 'recipes' %}">Recipes</a></li>
+            <li class="active">Recipes</li>
             <li class="projects"><a href="#">Projects</a></li>
             <li class="contact"><a href="#">Contact</a></li>
           </ul>

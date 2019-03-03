@@ -32,7 +32,7 @@
         <article>
           <div>
             <h3><a class="article-title" href="{% url 'detail' post.id %}">{{ post.title }}</a></h3>
-            <p class="article-content"><em>{{ post.body_summary }}</em> - <a href="{% url 'detail' post.id %}"><b class="full-post">[Full Post]</b></a></p>
+            <p class="article-content"><em>{{ post.summary }}</em> - <a href="{% url 'detail' post.id %}"><b class="full-post">[Full Post]</b></a></p>
           </div>
         </article>
       </div>
