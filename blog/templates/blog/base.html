@@ -38,7 +38,7 @@
             <li class="{% if url_name == '/' %}active{% endif %}">Home</li>
             <li class="weblog"><a href="#">Blog</a></li>
             <li class="recipes"><a href="{% url 'recipes' %}">Recipes</a></li>
-            <li class="projects"><a href="#">Projects</a></li>
+            <li class="projects"><a href="{% url 'projects' %}">Projects</a></li>
             <li class="contact"><a href="#">Contact</a></li>
           </ul>
           {% endwith %}

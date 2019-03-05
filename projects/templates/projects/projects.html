@@ -1,0 +1,22 @@
+{% extends "projects/base.html" %}
+
+{% block content %}
+
+<h2>Projects</h2>
+<br>
+<div class="container">
+  <div class="row">
+    {% for project in projects.all %}
+    <div class="col-10">
+      <article>
+        <div>
+          <h3><a class="article-title" href="{% url 'project_detail' project.id %}">{{ project.title }}</a></h3>
+          <p class="article-content"><em>{{ project.summary }}</em></p>
+        </div>
+      </article>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock content %}

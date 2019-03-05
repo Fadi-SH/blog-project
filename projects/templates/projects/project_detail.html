@@ -1,0 +1,15 @@
+{% extends "projects/base.html" %}
+
+{% block content %}
+
+<h1 class="article-title">{{ project.title }}</h1>
+<i> {{ project.pub_date_short }} </i>
+<br />
+{% if project.image %}
+<img class="pt-4 img-fluid" src="{{ project.image.url }}" />
+{% endif %}
+<br  />
+
+<p class="pt-5">{{ project.body|safe }}</p>
+
+{% endblock content %}
