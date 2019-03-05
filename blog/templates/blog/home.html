@@ -31,7 +31,7 @@
       <div class="col-6">
         <article>
           <div>
-            <h3><a class="article-title" href="{% url 'detail' post.id %}">{{ post.title }}</a></h3>
+            <h3><a class="article-title" href="{% url 'detail' slug=post.slug %}">{{ post.title }}</a></h3>
             <p class="article-content"><em>{{ post.summary }}</em> - <a href="{% url 'detail' post.id %}"><b class="full-post">[Full Post]</b></a></p>
           </div>
         </article>

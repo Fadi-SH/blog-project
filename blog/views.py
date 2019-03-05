@@ -11,6 +11,6 @@ def about(request):
     return render(request, 'blog/about.html')
 
 
-def detail(request, post_id):
-    detailpost = get_object_or_404(Post, pk=post_id)
+def detail(request, slug):
+    detailpost = get_object_or_404(Post, slug=slug)
     return render(request, 'blog/detail.html', {'post': detailpost})

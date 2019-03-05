@@ -7,6 +7,6 @@ def projects(request):
     return render(request, 'projects/projects.html', {'projects': projects})
 
 
-def project_detail(request, project_id):
-    detailproject = get_object_or_404(Project, pk=project_id)
+def project_detail(request, slug):
+    detailproject = get_object_or_404(Project, slug=slug)
     return render(request, 'projects/project_detail.html', {'project': detailproject})

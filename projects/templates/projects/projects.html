@@ -10,7 +10,7 @@
     <div class="col-10">
       <article>
         <div>
-          <h3><a class="article-title" href="{% url 'project_detail' project.id %}">{{ project.title }}</a></h3>
+          <h3><a class="article-title" href="{% url 'project_detail' slug=project.slug %}">{{ project.title }}</a></h3>
           <p class="article-content"><em>{{ project.summary }}</em></p>
         </div>
       </article>

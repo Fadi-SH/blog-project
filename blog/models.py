@@ -4,6 +4,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
+    slug = models.SlugField(unique=True)
     pub_date = models.DateTimeField()
     image = models.ImageField(upload_to='images/')
     summary = models.CharField(max_length=200)

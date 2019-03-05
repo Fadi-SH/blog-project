@@ -11,7 +11,7 @@
     <div class="col-4">
       <article>
         <div>
-          <h3><a class="article-title" href="{% url 'recipe_detail' recipe.id %}">{{ recipe.title }}</a></h3>
+          <h3><a class="article-title" href="{% url 'recipe_detail' slug=recipe.slug %}">{{ recipe.title }}</a></h3>
           <img class="img-fluid" src="{{ recipe.image.url }}" height=200 width=200 />
           <p class="article-content"><em>{{ recipe.summary }}</em></p>
         </div>
