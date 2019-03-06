@@ -1,0 +1,14 @@
+{% extends "weblog/base.html" %}
+
+{% block content %}
+
+
+<h1 class="article-title">{{ weblog.title }}</h1>
+<i> {{ weblog.pub_date_short }} </i>
+<br />
+<img class="pt-4 img-fluid" src="{{ weblog.image.url }}" />
+<br  />
+
+<p class="pt-5">{{ weblog.body|safe }}</p>
+
+{% endblock content %}

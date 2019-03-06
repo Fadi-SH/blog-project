@@ -1,0 +1,22 @@
+{% extends "weblog/base.html" %}
+
+{% block content %}
+
+<h2>Weblog</h2>
+<br>
+<div class="container">
+  <div class="row">
+    {% for weblog in weblog.all %}
+    <div class="col-10">
+      <article>
+        <div>
+          <h3><a class="article-title" href="{% url 'weblog_detail' slug=weblog.slug %}">{{ weblog.title }}</a></h3>
+          <p class="article-content"><em>{{ weblog.summary }}</em></p>
+        </div>
+      </article>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock content %}

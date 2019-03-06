@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'home/main.css' %}">
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Averia+Libre" rel="stylesheet">
@@ -35,8 +35,8 @@
         <nav class="sidebar">
           {% with request.resolver_match.url_name as url_name %}
           <ul id="menu">
-            <li class="{% if url_name == '/' %}active{% endif %}">Home</li>
-            <li class="weblog"><a href="#">Blog</a></li>
+            <li class="home"><a href="{% url 'blog-home' %}">Home</a></li>
+            <li class="active">Weblog</li>
             <li class="recipes"><a href="{% url 'recipes' %}">Recipes</a></li>
             <li class="projects"><a href="{% url 'projects' %}">Projects</a></li>
             <li class="contact"><a href="#">Contact</a></li>
