@@ -6,11 +6,12 @@
 <br>
 <div class="container">
   <div class="row">
-    {% for weblog in weblog.all %}
+    {% for weblog in weblogs.all %}
     <div class="col-10">
       <article>
         <div>
           <h3><a class="article-title" href="{% url 'weblog_detail' slug=weblog.slug %}">{{ weblog.title }}</a></h3>
+          <small><strong> {{ weblog.pub_date_short }} </strong></small>
           <p class="article-content"><em>{{ weblog.summary }}</em></p>
         </div>
       </article>

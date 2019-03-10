@@ -4,18 +4,18 @@
 
 <section class="intro-bio">
 
-  <p>
-    My name is <strong>Fadi Hammad</strong>. I'm a <strong>software
-      developer</strong> living in <strong>New York</strong> who is
-      passionate about the latest <strong>web</strong> technologies,
-      <strong>AI</strong>, home <strong>automation</strong> and mother
-      <strong>nature</strong>.
+    <p>
+        My name is <strong>Fadi Hammad</strong>. I'm a <strong>software
+        developer</strong> living in <strong>New York</strong> who is
+        passionate about <strong>cloud</strong> technologies, <strong>web</strong>
+        development, <strong>AI</strong>, home <strong>automation</strong> and
+        <strong>nature</strong>.
     </p>
 
     <p>
-      I also enjoy <strong>baked goods</strong>, tinkering with
-      solar-powered <strong>robots</strong>, and gaming when there's
-      time.
+        I also enjoy <strong>baked goods</strong>, <strong>language</strong>
+        learning, and space <strong>exploration</strong>. Sometimes, I like to
+        see myself as a <strong>coffee</strong> connoisseur.
     </p>
 
   </section>
@@ -23,22 +23,65 @@
   <hr>
   <br>
 
-  <h2>Latest Posts</h2>
-  <br>
+
   <div class="container">
+
+    <h2>Latest Posts</h2>
+    <br>
     <div class="row">
-      {% for post in posts.all %}
-      <div class="col-6">
+      {% for weblog in weblogs %}
+      <div class="col-4">
         <article>
           <div>
-            <h3><a class="article-title" href="{% url 'detail' post.id %}">{{ post.title }}</a></h3>
-            <p class="article-content"><em>{{ post.summary }}</em> - <a href="{% url 'detail' post.id %}"><b class="full-post">[Full Post]</b></a></p>
+            <h3><a class="article-title" href="{% url 'weblog_detail' slug=weblog.slug %}">{{ weblog.title }}</a></h3>
+            <small><i> {{ weblog.pub_date_short }} </i></small>
+            <img class="img-fluid post-image" src="{{ weblog.image.url }}"  />
+            <p class="article-content"><em>{{ weblog.summary }}</em></p>
           </div>
         </article>
       </div>
       {% endfor %}
     </div>
-    <p class="more clear">» <a href="#">See more posts</a></p>
+    <p class="more clear">» <a href="{% url 'weblog' %}">See more weblogs</a></p>
+
+    <hr>
+
+    <h2>Projects</h2>
+    <br>
+    <div class="row">
+      {% for project in projects %}
+      <div class="col-8">
+        <article>
+          <div>
+            <h3><a class="article-title" href="{% url 'project_detail' slug=project.slug %}">{{ project.title }}</a></h3>
+            <p class="article-content"><em>{{ project.summary }}</em></p>
+          </div>
+        </article>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="more clear">» <a href="{% url 'projects' %}">See more Projects</a></p>
+
+    <hr>
+
+    <h2>Newest Recipes</h2>
+    <br>
+    <div class="row">
+      {% for recipe in recipes %}
+      <div class="col-4">
+        <article>
+          <div>
+            <h3><a class="article-title" href="{% url 'recipe_detail' slug=recipe.slug %}">{{ recipe.title }}</a></h3>
+            <img class="img-fluid post-image" src="{{ recipe.image.url }}"  />
+            <p class="article-content"><em>{{ recipe.summary }}</em></p>
+          </div>
+        </article>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="more clear">» <a href="{% url 'recipes' %}">See more Recipes</a></p>
+
+
   </div>
 
   {% endblock content %}

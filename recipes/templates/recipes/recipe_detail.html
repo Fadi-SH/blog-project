@@ -2,10 +2,12 @@
 
 {% block content %}
 
+<p class="more clear float-right">» <a href="{% url 'recipes' %}">See more recipes</a></p>
+
 <h1 class="article-title">{{ recipe.title }}</h1>
 <i> {{ recipe.pub_date_short }} </i>
 <br />
-<img class="pt-4 img-fluid" src="{{ recipe.image.url }}" />
+<img class="pt-4 img-fluid detail-image" src="{{ recipe.image.url }}" />
 <br  />
 
 <p class="pt-5">{{ recipe.instructions|safe }}</p>

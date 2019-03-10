@@ -4,7 +4,7 @@ from .models import Recipe
 
 
 def recipes(request):
-    recipes = Recipe.objects
+    recipes = Recipe.objects.order_by('-pub_date')
     return render(request, 'recipes/recipes.html', {'recipes': recipes})
 
 

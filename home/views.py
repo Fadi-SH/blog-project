@@ -1,12 +1,17 @@
-from django.shortcuts import render, get_object_or_404
-from .models import Post
+from django.shortcuts import render
+from weblog.models import Weblog
+from recipes.models import Recipe
+from projects.models import Project
 
 
 def home(request):
-    posts = Post.objects
-    return render(request, 'home/home.html', {'posts': posts})
+    weblogs = Weblog.objects.order_by('-pub_date')[:3]
+    recipes = Recipe.objects.order_by('-pub_date')[:3]
+    projects = Project.objects.order_by('-pub_date')[:3]
+
+    return render(request, 'home/home.html',
+                  {'recipes': recipes, 'weblogs': weblogs, 'projects': projects})
 
 
-def detail(request, post_id):
-    detailpost = get_object_or_404(Post, pk=post_id)
-    return render(request, 'home/detail.html', {'post': detailpost})
+def contact(request):
+    return render(request, 'contact/contact.html')

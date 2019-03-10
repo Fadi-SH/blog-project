@@ -4,8 +4,8 @@ from .models import Weblog
 
 
 def weblog(request):
-    weblog = Weblog.objects
-    return render(request, 'weblog/weblog.html', {'weblog': weblog})
+    weblogs = Weblog.objects.order_by('-pub_date')
+    return render(request, 'weblog/weblog.html', {'weblogs': weblogs})
 
 
 def weblog_detail(request, slug):

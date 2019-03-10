@@ -15,6 +15,14 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Averia Libre",Palatino,"Hoefler Text",Georgia,serif;
 }
 
+h3, h4, h5, h6 {
+    color: #E76E5E;
+}
+
+a {
+    color: #5E99E7;
+}
+
 .header {
   padding-bottom: 1rem;
 }
@@ -77,6 +85,11 @@ nav.sidebar ul li a {
 .post-image {
   height: 150px;
   width: 200px;
+}
+
+.detail-image {
+  height: 450px;
+  width: 600px;
 }
 
 .full-post {
@@ -142,6 +155,19 @@ a.article-title:hover {
 .footer p {
     padding-top: 14px;
     border-top: 1px solid #aaaaab;
+}
+
+main.content ul.contactbar{
+    text-align:center;
+    margin:0 auto;
+    padding:0;
+    list-style-type:none;
+    line-height:1.5
+}
+main.content ul.contactbar li{
+    display:inline;
+    margin-right:.8em;
+    font-size:3.5em
 }
 
 @media(max-width:960px) and (min-width:769px) {
