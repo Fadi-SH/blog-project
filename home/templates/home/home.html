@@ -30,12 +30,10 @@
     <br>
     <div class="row">
       {% for weblog in weblogs %}
-      <div class="col-4">
+      <div class="col-6">
         <article>
           <div>
             <h3><a class="article-title" href="{% url 'weblog_detail' slug=weblog.slug %}">{{ weblog.title }}</a></h3>
-            <small><i> {{ weblog.pub_date_short }} </i></small>
-            <img class="img-fluid post-image" src="{{ weblog.image.url }}"  />
             <p class="article-content"><em>{{ weblog.summary }}</em></p>
           </div>
         </article>
@@ -50,7 +48,7 @@
     <br>
     <div class="row">
       {% for project in projects %}
-      <div class="col-8">
+      <div class="col-6">
         <article>
           <div>
             <h3><a class="article-title" href="{% url 'project_detail' slug=project.slug %}">{{ project.title }}</a></h3>
@@ -72,7 +70,6 @@
         <article>
           <div>
             <h3><a class="article-title" href="{% url 'recipe_detail' slug=recipe.slug %}">{{ recipe.title }}</a></h3>
-            <img class="img-fluid post-image" src="{{ recipe.image.url }}"  />
             <p class="article-content"><em>{{ recipe.summary }}</em></p>
           </div>
         </article>

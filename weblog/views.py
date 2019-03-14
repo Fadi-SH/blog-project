@@ -5,8 +5,8 @@ from .models import Weblog
 
 
 def weblog(request):
-    weblogs_list = Weblog.objects.order_by('-pub_date')
-    paginator = Paginator(weblogs_list, 2)
+    weblog_list = Weblog.objects.order_by('-pub_date')
+    paginator = Paginator(weblog_list, 8)
 
     page = request.GET.get('page')
     weblogs = paginator.get_page(page)

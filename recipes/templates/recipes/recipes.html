@@ -2,12 +2,12 @@
 
 {% block content %}
 
-<h2>My Recipe Collection ‍🍳👨🏻‍🍳🍴</h2>
+<h2>My Recipe Collection 🍰</h2>
 <br>
 <br>
 <div class="container">
   <div class="row">
-    {% for recipe in recipes.all %}
+    {% for recipe in recipes %}
     <div class="col-4">
       <article>
         <div>
@@ -19,6 +19,24 @@
     </div>
     {% endfor %}
   </div>
+</div>
+
+<div class="pagination float-right">
+    <span class="step-links">
+        {% if recipes.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ recipes.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ recipes.number }} of {{ recipes.paginator.num_pages }}.
+        </span>
+
+        {% if recipes.has_next %}
+            <a href="?page={{ recipes.next_page_number }}">next</a>
+            <a href="?page={{ recipes.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
 </div>
 
 {% endblock content %}

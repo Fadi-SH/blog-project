@@ -5,9 +5,9 @@ from projects.models import Project
 
 
 def home(request):
-    weblogs = Weblog.objects.order_by('-pub_date')[:3]
-    recipes = Recipe.objects.order_by('-pub_date')[:3]
-    projects = Project.objects.order_by('-pub_date')[:3]
+    weblogs = Weblog.objects.order_by('-pub_date')[:6]
+    recipes = Recipe.objects.order_by('-pub_date')[:6]
+    projects = Project.objects.order_by('-pub_date')[:6]
 
     return render(request, 'home/home.html',
                   {'recipes': recipes, 'weblogs': weblogs, 'projects': projects})

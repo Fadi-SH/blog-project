@@ -1,10 +1,16 @@
 from django.shortcuts import render, get_object_or_404
+from django.core.paginator import Paginator
 
 from .models import Recipe
 
 
 def recipes(request):
-    recipes = Recipe.objects.order_by('-pub_date')
+    recipe_list = Recipe.objects.order_by('-pub_date')
+    paginator = Paginator(recipe_list, 8)
+
+    page = request.GET.get('page')
+    recipes = paginator.get_page(page)
+
     return render(request, 'recipes/recipes.html', {'recipes': recipes})
 
 
