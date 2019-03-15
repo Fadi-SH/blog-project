@@ -8,7 +8,7 @@
 <div class="container">
   <div class="row">
     {% for recipe in recipes %}
-    <div class="col-4">
+    <div class="col-6">
       <article>
         <div>
           <h3><a class="article-title" href="{% url 'recipe_detail' slug=recipe.slug %}">{{ recipe.title }}</a></h3>
