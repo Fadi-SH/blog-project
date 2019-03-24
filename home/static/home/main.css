@@ -326,9 +326,3 @@ main.content ul.contactbar li{
 		margin-left: 275px
 	}
 }
-
-@media screen and (max-width: 450px) {
-  .article-title {
-      font-size: 1rem;
-  }
-}
