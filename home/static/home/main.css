@@ -326,3 +326,9 @@ main.content ul.contactbar li{
 		margin-left: 275px
 	}
 }
+
+@media screen and (max-width: 400px) {
+  .h4, h4 {
+    font-size: 1rem !important;
+  }
+}
