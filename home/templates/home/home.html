@@ -48,7 +48,7 @@
       <div class="col-6">
         <article>
           <div>
-            <h3><a class="article-title" href="{% url 'project_detail' slug=project.slug %}">{{ project.title }}</a></h3>
+            <h3><a class="article-title" href="{% url 'project_detail' slug=project.slug %}" style="font-size: 19px;">{{ project.title }}</a></h3>
             <p class="article-content"><em>{{ project.summary }}</em></p>
           </div>
         </article>
@@ -66,7 +66,7 @@
       <div class="col-6">
         <article>
           <div>
-            <h3><a class="article-title" href="{% url 'recipe_detail' slug=recipe.slug %}">{{ recipe.title }}</a></h3>
+            <h3><a class="article-title" href="{% url 'recipe_detail' slug=recipe.slug %}" style="font-size: 19px;">{{ recipe.title }}</a></h3>
             <img class="img-fluid" src="{{ recipe.image.url }}" height=200 width=200 />
             <p class="article-content"><em>{{ recipe.summary }}</em></p>
           </div>
