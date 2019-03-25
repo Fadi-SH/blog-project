@@ -267,6 +267,9 @@ main.content ul.contactbar li{
 		padding: 10px;
 		width: auto
 	}
+  h4 {
+    font-size: 1rem;
+  }
 	body header.header {
 		margin: 0
 	}
@@ -325,10 +328,4 @@ main.content ul.contactbar li{
 	main.content .contactbar {
 		margin-left: 275px
 	}
-}
-
-@media(max-width:450px) and (min-width:200px) {
-  .h4, h4 {
-    font-size: 1rem;
-  }
 }
