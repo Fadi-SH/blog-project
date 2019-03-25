@@ -327,7 +327,7 @@ main.content ul.contactbar li{
 	}
 }
 
-@media(max-width:400px) {
+@media(min-width:400px) {
   a.article-title {
     font-size: 1rem;
   }
