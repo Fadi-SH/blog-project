@@ -13,12 +13,12 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" type="text/css" href="{% static 'home/main.css' %}">
-
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Averia+Libre" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Aclonica" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" type="text/css" href="{% static 'home/main.css' %}">
 
   <title>Fadi H.</title>
 
@@ -32,7 +32,7 @@
       <div class="col-3">
         <nav class="sidebar">
           <ul id="menu">
-            <li class="active">Home</li>
+            <li><a href="{% url 'blog-home' %}" class="active">Home</a></li>
             <li class="weblog"><a href="{% url 'weblog' %}">Weblog</a></li>
             <li class="recipes"><a href="{% url 'recipes' %}">Recipes</a></li>
             <li class="projects"><a href="{% url 'projects' %}">Projects</a></li>

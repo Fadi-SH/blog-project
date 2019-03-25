@@ -36,7 +36,7 @@
           {% with request.resolver_match.url_name as url_name %}
           <ul id="menu">
             <li class="home"><a href="{% url 'blog-home' %}">Home</a></li>
-            <li class="active">Weblog</li>
+            <li><a href="{% url 'weblog' %}" class="active">Weblog</li>
             <li class="recipes"><a href="{% url 'recipes' %}">Recipes</a></li>
             <li class="projects"><a href="{% url 'projects' %}">Projects</a></li>
             <li class="contact"><a href="{% url 'contact' %}">Contact</a></li>

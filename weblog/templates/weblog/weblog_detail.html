@@ -2,9 +2,8 @@
 
 {% block content %}
 
-<p class="more clear float-right">» <a href="{% url 'weblog' %}">See more weblogs</a></p>
-
-
+<p class="more clear">» <a href="{% url 'weblog' %}">See more weblogs</a></p>
+<hr>
 <h1 class="article-title">{{ weblog.title }}</h1>
 <i> {{ weblog.pub_date_short }} </i>
 <br />
