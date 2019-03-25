@@ -328,7 +328,7 @@ main.content ul.contactbar li{
 }
 
 @media screen and (min-width: 300px) and (max-width: 500px) {
-  .article-title {
-    font-size: 12px;
+  .h4, h4 {
+    font-size: 1rem;
   }
 }
