@@ -327,8 +327,8 @@ main.content ul.contactbar li{
 	}
 }
 
-@media only screen and (min-width: 360px) {
-  h4 {
-       font-size: 12px;
-     }
+@media screen and (min-width: 300px) and (max-width: 500px) {
+  .article-title {
+    font-size: 12px;
+  }
 }
